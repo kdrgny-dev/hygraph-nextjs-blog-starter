@@ -16,8 +16,6 @@ async function getPosts() {
   return allPosts.data.posts
 }
 
-export const revalidate = 30 // revalidate at most every hour
-
 export default async function PostsList() {
   const allPosts = await getPosts()
 

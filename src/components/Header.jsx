@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function Header() {
   return (
-    <header className="py-10 relative bg-primary">
+    <header className="py-3 bg-primary sticky top-0 left-0 w-full">
       <div className="container">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -28,7 +28,15 @@ export default function Header() {
             </h2>
           </div>
           <nav className="relative">
-            <ul>
+            <ul className="flex items-center gap-2">
+              <li>
+                <Link
+                  href="/"
+                  className="text-white inline-flex items-center justify-center py-2 px-4 transition-colors duration-150 ease-in hover:bg-white hover:text-primary rounded"
+                >
+                  Home
+                </Link>
+              </li>
               <NavList navId="main" />
             </ul>
           </nav>

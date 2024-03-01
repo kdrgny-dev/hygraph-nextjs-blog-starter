@@ -10,7 +10,7 @@ export const metadata = {
     description: 'The React Framework for the Web'
   }
 }
-export const revalidate = 30 // revalidate at most every hour
+export const revalidate = 3600 // revalidate at most every hour
 
 export default function Layout({ children }) {
   return (

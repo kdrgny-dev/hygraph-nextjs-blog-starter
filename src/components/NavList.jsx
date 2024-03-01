@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { SingleNav } from '@/queries/navigations'
+
 async function getNav(navId) {
   const res = await fetch(process.env.HYGRAPH_ENDPOINT, {
     method: 'POST',
@@ -27,7 +28,10 @@ export default async function NavList({ navId }) {
         const url = navItem.externalUrl || navItem.page.slug
         return (
           <li key={navItem.id}>
-            <Link href={`/${url}`} className="text-white">
+            <Link
+              href={`/${url}`}
+              className="text-white inline-flex items-center justify-center py-2 px-4 transition-colors duration-150 ease-in hover:bg-white hover:text-primary rounded"
+            >
               {navItem.displayText}
             </Link>
           </li>
