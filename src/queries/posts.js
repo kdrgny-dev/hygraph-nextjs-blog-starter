@@ -6,6 +6,11 @@ const AllPosts = `
       slug
       title
       date
+      coverImage {
+        url
+        width
+        height
+      }
     }
   }
 `
@@ -31,6 +36,10 @@ const SinglePost = `
         width
         height
       }
+      categories {
+        categoryName
+        slug
+      }
       author {
         ... on Author {
           remoteTypeName: __typename
@@ -50,4 +59,25 @@ const SinglePost = `
   }
 `
 
-export { AllPosts, SinglePost }
+const CategoryPosts = `
+  query CategoryPosts($slug: String!) {
+    categories(where: { slug: $slug }) {
+      categoryName
+      slug
+      posts(orderBy: date_DESC) {
+        id
+        excerpt
+        slug
+        title
+        date
+        coverImage {
+          url
+          width
+          height
+        }
+      }
+    }
+  }
+`
+
+export { AllPosts, SinglePost, CategoryPosts }
