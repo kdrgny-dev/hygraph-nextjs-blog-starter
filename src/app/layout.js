@@ -6,11 +6,11 @@ export const metadata = {
     template: '%s | Hygraph Blog Next.js Starter'
   },
   openGraph: {
-    title: 'Next.js',
-    description: 'The React Framework for the Web'
+    title: 'blog.kdrgny.com',
+    description: 'kdrgny blog about web development, Ayvalık, and more.'
   }
 }
-export const revalidate = 3600 // revalidate at most every hour
+export const revalidate = 1800 // revalidate at most every hour
 
 export default function Layout({ children }) {
   return (
