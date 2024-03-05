@@ -22,6 +22,7 @@ async function getNav(navId) {
 
 export default async function NavList({ navId }) {
   const navItems = await getNav(navId)
+
   return (
     <>
       {navItems.map((navItem) => {

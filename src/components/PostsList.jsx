@@ -31,7 +31,7 @@ export default async function PostsList() {
               <div className="relative overflow-hidden">
                 <Link
                   href={`/posts/${post.slug}`}
-                  className="max-h-44 overflow-hidden group"
+                  className="h-44 overflow-hidden group block"
                 >
                   <Image
                     src={post.coverImage.url}

@@ -29,14 +29,6 @@ export default function Header() {
           </div>
           <nav className="relative">
             <ul className="flex items-center gap-2">
-              <li>
-                <Link
-                  href="/"
-                  className="text-white inline-flex items-center justify-center py-2 px-4 transition-colors duration-150 ease-in hover:bg-white hover:text-primary rounded"
-                >
-                  Home
-                </Link>
-              </li>
               <NavList navId="main" />
             </ul>
           </nav>

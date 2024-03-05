@@ -53,7 +53,7 @@ export default async function Page({ params }) {
         )}
       </div>
       <div className="pb-16 lg:pb-20">
-        <div className="prose max-w-none pt-10 pb-8">
+        <div className="prose max-w-none pt-10 pb-8 post-content">
           <RichText content={page.content.raw} />
         </div>
       </div>
