@@ -4,6 +4,7 @@ import { AllPosts } from '../queries/posts'
 
 async function getPosts() {
   const allPosts = await fetch(process.env.HYGRAPH_ENDPOINT, {
+    next: { revalidate: 900 },
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -34,7 +35,7 @@ export default async function PostsList() {
                   className="h-44 overflow-hidden group block"
                 >
                   <Image
-                    src={post.coverImage.url}
+                    src={post.coverImage?.url}
                     alt={post.title}
                     className="rounded-t-lg object-cover group-hover:scale-105 transition duration-150 ease-in-out"
                     width={800}
@@ -53,13 +54,13 @@ export default async function PostsList() {
                 </time>
               </div>
               <div className="p-4 flex flex-col gap-3">
-                <h2 className="text-2xl font-bold tracking-tight text-primary">
+                <h2 className="text-2xl font-bold tracking-tight text-primary min-h-16 line-clamp-2">
                   <Link href={`/posts/${post.slug}`} className="text-gray-900">
                     {post.title}
                   </Link>
                 </h2>
                 {post.excerpt && (
-                  <div className="prose max-w-none text-gray-500 line-clamp-4">
+                  <div className="prose max-w-none text-gray-500 line-clamp-4 min-h-28">
                     {post.excerpt}
                   </div>
                 )}

@@ -10,7 +10,6 @@ export const metadata = {
     description: 'kdrgny blog about web development, Ayvalık, and more.'
   }
 }
-export const revalidate = 900 // revalidate at most every hour
 
 export default function Layout({ children }) {
   return (

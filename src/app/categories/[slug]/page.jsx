@@ -4,6 +4,7 @@ import { CategoryPosts } from '@/queries/posts'
 
 async function getPosts(slug) {
   const categoryPosts = await fetch(process.env.HYGRAPH_ENDPOINT, {
+    next: { revalidate: 900 },
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -16,8 +17,6 @@ async function getPosts(slug) {
 
   return categoryPosts.data.categories[0].posts
 }
-
-export const revalidate = 30 // revalidate at most every hour
 
 export default async function PostsByCategory({ params }) {
   const categoryPosts = await getPosts(params.slug)
